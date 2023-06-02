@@ -1,46 +1,50 @@
-:root {
-  --samp: 0deg;
-  --woof: #330330;
-}
-
+:target
+::selection,
 ::selection {
-  background: deeppink;
-  color: #030303;
+  background: #404;
+  color: #bae;
 }
 
-:any-link {
-  color: #ee1;
-  opacity: 0.909;
-  transition: 210ms ease-in-out;
+:root:target,
+:root {
+  background-color: mediumpurple;
+  background-image: linear-gradient(mediumpurple, floralwhite);
+  color: #404;
 }
 
-:any-link:nth-child(odd) {
-  color: #1ee;
+.plush {
+  background-color: #bae;
+  box-shadow: 0 0 1em 1em #bae;
 }
 
-:focus,
-:hover {
-  text-decoration-color: #1ee;
+.blush {
+  text-shadow: 1vw 0 1vw, -1vw 0 1vw;
 }
 
-:focus,
-:active {
-  opacity: 1;
+:any-link { 
+  color: rebeccapurple;
+  transition: 800ms ease-out;
 }
 
-html {
-  background: indigo;
-  background-image: linear-gradient(.3turn, #1ee 0%, #1ee 10%, indigo 10%, indigo 90%, #ee1 90%);
-  color: gainsboro;
-  transition: 210ms ease-in-out;
+:focus { 
+  color: #404;
+  outline-color: #404;
+  background-color: deepskyblue;
+  box-shadow: 0 0 1em 1em deepskyblue;
 }
 
-samp,
-mark {
-  background: #ee1;
-  color: var(--woof);
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-image: linear-gradient(mediumpurple, peachpuff);
+  }
 }
 
-samp {
-  filter: hue-rotate(var(--samp));
+@media (prefers-contrast: more) {
+  :root {
+    background-image: linear-gradient(gainsboro, floralwhite);
+  }
+}
+
+@media (prefers-reduced-motion) {
+  :any-link { transition: none }
 }
